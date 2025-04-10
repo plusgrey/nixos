@@ -10,5 +10,6 @@
     btop
     nemo
     rofi
+    home-manager
   ];
 }

@@ -16,6 +16,9 @@
   # Time zone
   time.timeZone = "Asia/Singapore";
 
+  #extra options
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nix.experimental-features = [ "nix-command" "flakes" ];
