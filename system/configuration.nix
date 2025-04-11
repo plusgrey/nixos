@@ -10,7 +10,7 @@
   ];
 
   # Networking
-  networking.hostName = "nixos-jh";
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
   # Time zone
@@ -21,7 +21,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nix.experimental-features = [ "nix-command" "flakes" ];
+
   # User account
   users.users.jh = {
     isNormalUser = true;

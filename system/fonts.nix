@@ -5,7 +5,7 @@
 
   fonts = {
     fonts = with pkgs; [
-      unstable.maple-mono.Normal-NF-CN
+      maple-mono.Normal-NF-CN
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif

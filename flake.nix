@@ -2,8 +2,8 @@
   description = "My NixOS configuration with Flakes and Home Manager";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -19,12 +19,12 @@
       config.allowUnfree = true;
     };
 
-    pkgs-unstable = import nixpkgs-unstable {
+    pkgs-stable = import nixpkgs-stable {
       inherit system;
       config.allowUnfree = true;
     };
   in {
-    nixosConfigurations.nixos-jh = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         (self + "/system/configuration.nix")
@@ -33,7 +33,7 @@
         {
           nixpkgs.overlays = [
             (final: prev: {
-              unstable = pkgs-unstable;
+              stable = pkgs-stable;
             })
           ];
         }
