@@ -7,6 +7,7 @@
     ./packages.nix
     ./fonts.nix
     ./display.nix
+    ./vpn.nix
   ];
 
   # Networking
